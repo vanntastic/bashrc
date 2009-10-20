@@ -619,11 +619,15 @@ git_rm_all (){
   git st | grep deleted | sed -e 's/deleted: *//' | sed 's/# *//' | xargs git rm
 }
 
+
 #displays the full path
 # PS1='\[\033[01;32m\]\[\033[00m\]\[\033[01;34m\]\w\[\033[00m\] $ '
 #displays just the working directory
 # PS1="[ \W ]\\$ "
-PS1="\W : \\$ "
+# dollar sign minimal
+# PS1="\W : \\$ "
+# caret minimal
+PS1="\W> "
 
 case "$TERM" in
 xterm*|rxvt*|vt100*)
