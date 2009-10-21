@@ -619,6 +619,12 @@ git_rm_all (){
   git st | grep deleted | sed -e 's/deleted: *//' | sed 's/# *//' | xargs git rm
 }
 
+# removes .svn dirs
+function remove_svn () {
+  find . -name .svn -print0 | xargs -0 rm -rf;
+  echo "All .svn directories have been removed."
+}
+
 
 #displays the full path
 # PS1='\[\033[01;32m\]\[\033[00m\]\[\033[01;34m\]\w\[\033[00m\] $ '
