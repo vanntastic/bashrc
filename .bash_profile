@@ -625,6 +625,18 @@ function remove_svn () {
   echo "All .svn directories have been removed."
 }
 
+# quick mysql dump
+function db_dump () {
+  if [[ -n "$1" ]]; then
+    # dumping a mysql database to a file
+    local DSTR=$(date +%Y-%m%d);
+    local FNAME="$DSTR-$1-dump.sql";
+    mysqldump --databases $1 --user $2 --password > $FNAME
+    echo "$1 has been dumped successfully as : $FNAME";
+  else
+    echo "db_dump [database] [username]"
+  fi
+}
 
 #displays the full path
 # PS1='\[\033[01;32m\]\[\033[00m\]\[\033[01;34m\]\w\[\033[00m\] $ '
