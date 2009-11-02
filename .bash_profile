@@ -41,6 +41,8 @@ alias edgify='rake rails:freeze:edge'
 alias tasks='sake -T'
 alias models='ls app/models'
 alias test_log='tail -f log/test.log'
+alias ch='cheat'
+alias ch_sheets='cheat sheets | less'
 
 # **** SVN ALIASES ****
 alias svn_files_to_add='svn st | grep ?'
@@ -626,6 +628,7 @@ function remove_svn () {
 }
 
 # quick mysql dump
+# USAGE : db_dump [database] [username]
 function db_dump () {
   if [[ -n "$1" ]]; then
     # dumping a mysql database to a file
