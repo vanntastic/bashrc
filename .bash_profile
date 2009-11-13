@@ -57,7 +57,7 @@ alias old_deploy='cap _1.4.1_ deploy'
 
 # **** GIT ALIASES ****
 alias git_url='cat .git/config | grep url'
-alias git_ci='git add .; git commit -m '
+alias git_ci='git ci -a -m '
 alias git_config='cat .git/config | less'
 alias git_ignore='vi .git/info/exclude'
 alias git_add='git add .'
