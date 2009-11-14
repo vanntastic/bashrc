@@ -61,6 +61,7 @@ alias git_ci='git ci -a -m '
 alias git_config='cat .git/config | less'
 alias git_ignore='vi .git/info/exclude'
 alias git_add='git add .'
+alias git_unstage='git co HEAD .'
 
 # **** START SYNERGY HERE **** 
 alias start_synergy_xp='/Applications/synergy/synergys -f --config /Users/vann/synergy_xp.conf'
