@@ -98,10 +98,14 @@ alias dl='curl -O'
 # install facebox via git                      
 alias jquery_install_facebox='git clone git://github.com/defunkt/facebox'                      
 
-# scp keys for a server, useful when setting up a server for the first time
+# scp keys for a server, useful when setting up a server for the very first time
+# EX:
+#   setup_keys you@yourhost.com
+#   # now you should be able to get in w/o a password!
 setup_keys () {
   if [[ -n "$1" ]]; then
-    scp .ssh/id_rsa.pub $1:~/.ssh/authorized_keys
+    ssh $1 'mkdir ~/.ssh';
+    scp ~/.ssh/id_rsa.pub $1:~/.ssh/authorized_keys
   else
     echo "USAGE : setup_keys [ssh_host_name]"
   fi
