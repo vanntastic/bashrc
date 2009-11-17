@@ -104,7 +104,7 @@ alias jquery_install_facebox='git clone git://github.com/defunkt/facebox'
 #   # now you should be able to get in w/o a password!
 setup_keys () {
   if [[ -n "$1" ]]; then
-    ssh $1 'mkdir ~/.ssh';
+    ssh $1 'mkdir -p ~/.ssh';
     scp ~/.ssh/id_rsa.pub $1:~/.ssh/authorized_keys
   else
     echo "USAGE : setup_keys [ssh_host_name]"
